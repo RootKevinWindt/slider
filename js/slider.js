@@ -56,12 +56,12 @@ var playing = true;
 var pauseButton = document.getElementById('pause');
 
 function pauseSlideshow(){
-    pauseButton.innerHTML = 'Play';
+    pauseButton.textContent = 'Play';
     playing = false;
 }
 
 function playSlideshow(){
-    pauseButton.innerHTML = 'Pause';
+    pauseButton.textContent = 'Pause';
     playing = true;
 }
 
