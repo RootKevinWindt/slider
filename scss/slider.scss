@@ -20,14 +20,17 @@ body {
     display: none;
     width: 100%;
   }
-    .slideshow__button-left {
+  .slideshow__buttons{
+    margin: 0 43% 0 43%;
+      .slideshow__button-left {
       border: 1px solid black;
-
-    }
+      }
       .slideshow__button-right {
         border: 1px solid black;
-        float: right;
-
+      }
+      .slideshow__button-pause {
+        border: 1px solid black;
+      }
     }
   }
 .footer {
