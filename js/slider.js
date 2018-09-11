@@ -1,5 +1,6 @@
 //start point
 var slidePage = 1;
+//timer set to 0
 var timer = null;
 //variable for de slides start with 1
 showSlides(slidePage);
@@ -36,7 +37,7 @@ function showSlides(image){
     //if 1 image is being displayed block others
     slides[slidePage-1].style.display = "block";
     //the image changes every 10 seconds
-    timer = setTimeout(showSlides, 10000);
+    timer = setTimeout(showSlides, 5000);
 }
 //if key is pressed
 document.onkeydown = function(e){
@@ -49,7 +50,25 @@ document.onkeydown = function(e){
         plusSlide(-1);
     }
 };
+//the slideshow is playing
+var playing = true;
+//connection pause button
+var pauseButton = document.getElementById('pause');
 
+function pauseSlideshow(){
+    pauseButton.innerHTML = 'Play';
+    playing = false;
+}
+
+function playSlideshow(){
+    pauseButton.innerHTML = 'Pause';
+    playing = true;
+}
+
+pauseButton.onclick = function(){
+    if(playing){ pauseSlideshow(); }
+    else{ playSlideshow(); }
+};
 
 
 
