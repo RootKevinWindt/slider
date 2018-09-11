@@ -17,14 +17,13 @@ function currentSlide(image) {
     //the slide that is on the screen is the current slide
     showSlides(slidePage = image);
 }
-
 function showSlides(image){
     //make empty variable
     var i;
     //connect images to variable
     var slides = document.getElementsByClassName("slideshow__slides");
     //if empty image is there go to next image
-    if (image==undefined){image = ++slidePage}
+    if (image===undefined){image = ++slidePage}
     //if there is no more slide to go to, go back to slide 1
     if (image > slides.length) {slidePage = 1}
     //if there are more slides, go to next slide
@@ -39,6 +38,19 @@ function showSlides(image){
     //the image changes every 10 seconds
     timer = setTimeout(showSlides, 10000);
 }
+//if key is pressed
+document.onkeydown = function(e){
+    //right key
+    if (e.keyCode == 39) {
+        plusSlide(1);
+    }
+    //left key
+    else if (e.keyCode == 37) {
+        plusSlide(-1);
+    }
+};
+
+
 
 
 
